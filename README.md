@@ -49,8 +49,8 @@ Este projeto simula uma aplicação real utilizada em ambientes profissionais.
 to-do-list/
 │
 ├── backend/
-│   ├── users/          # App responsável por autenticação
-│   ├── tasks/          # App responsável pelas tarefas
+│   ├── users/          
+│   ├── tasks/          
 │   └── manage.py
 │
 ├── frontend/
