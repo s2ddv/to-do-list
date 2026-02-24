@@ -1,93 +1,68 @@
 import { useState } from "react";
 
 export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, password });
+  };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-200 to-indigo-100">
-      <div className="bg-white w-[400px] p-10 rounded-2xl shadow-2xl">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-2xl">
+        <h2 className="mb-6 text-2xl font-bold text-center">
+          Login
+        </h2>
 
-        {}
-        <div className="flex items-center mb-8">
-          <span className="w-4 h-4 bg-indigo-600 skew-x-[-20deg] mr-2"></span>
-          <span className="text-lg font-semibold">Invooce</span>
-        </div>
-
-        {}
-        <h2 className="mb-1 text-2xl font-semibold text-center">Login</h2>
-        <p className="mb-6 text-sm text-center text-gray-500">
-          Hi, Welcome back 👋
-        </p>
-
-        {}
-        <button className="flex items-center justify-center w-full py-2 mb-4 transition border border-gray-300 rounded-lg hover:bg-gray-50">
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="google"
-            className="w-4 mr-2"
-          />
-          Login with Google
-        </button>
-
-        {/* Divider */}
-        <div className="flex items-center mb-6 text-xs text-gray-400">
-          <div className="flex-1 h-px bg-gray-200"></div>
-          <span className="mx-3">or Login with Email</span>
-          <div className="flex-1 h-px bg-gray-200"></div>
-        </div>
-
-        {}
-        <form className="flex flex-col">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          
           {}
-          <label className="mb-1 text-sm font-medium">Email</label>
-          <input
-            type="email"
-            placeholder="E.g. johndoe@email.com"
-            className="px-3 py-2 mb-4 transition border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-          />
-
-          {}
-          <label className="mb-1 text-sm font-medium">Password</label>
-          <div className="relative mb-4">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Enter your password"
-              className="w-full px-3 py-2 transition border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
-            >
-              👁
-            </button>
-          </div>
-
-          {}
-          <div className="flex items-center justify-between mb-6 text-xs">
-            <label className="flex items-center gap-1 cursor-pointer">
-              <input type="checkbox" className="accent-indigo-600" />
-              Remember Me
+          <div>
+            <label className="block mb-1 text-sm font-medium">
+              Email
             </label>
-            <span className="text-indigo-600 cursor-pointer hover:underline">
-              Forgot Password?
-            </span>
+            <input
+              type="email"
+              placeholder="Digite seu email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
           </div>
 
           {}
-          <button className="py-2 font-medium text-white transition bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700">
-            Login
+          <div>
+            <label className="block mb-1 text-sm font-medium">
+              Senha
+            </label>
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          {}
+          <button
+            type="submit"
+            className="w-full py-2 text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700"
+          >
+            Entrar
           </button>
         </form>
 
-        {/* Signup */}
-        <p className="mt-6 text-sm text-center">
-          Not registered yet?{" "}
-          <span className="font-medium text-indigo-600 cursor-pointer hover:underline">
-            Create an account ↗
+        <p className="mt-4 text-sm text-center">
+          Não tem conta?{" "}
+          <span className="text-blue-600 cursor-pointer hover:underline">
+            Criar conta
           </span>
         </p>
-
       </div>
     </div>
   );

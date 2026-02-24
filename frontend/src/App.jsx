@@ -1,7 +1,11 @@
-import LoginPage from "./pages/LoginPage";
-
 function App() {
-  return <LoginPage />;
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-blue-500">
+      <h1 className="text-4xl font-bold text-white">
+        Tailwind Está Funcionando 🚀
+      </h1>
+    </div>
+  )
 }
 
-export default App;
+export default App
