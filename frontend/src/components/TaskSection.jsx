@@ -1,4 +1,4 @@
-import TaskTable from "src/components/TaskTable";
+import TaskTable from "./components/TaskTable";
 
 export default function TaskSection({ title, tasks}) { 
     return ( 
